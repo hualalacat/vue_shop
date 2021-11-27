@@ -54,7 +54,6 @@ export default {
         if (!valid) return
         // 返回promise用await啥的;解构数据，把其中用的data赋给res
         const { data: res } = await this.$http.post('login', this.loginForm)
-        console.log(res)
         if (res.meta.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         window.sessionStorage.setItem('token', res.data.token)
